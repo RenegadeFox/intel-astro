@@ -37,8 +37,6 @@ Intel Astro was created with help from these resources
 
 [Vue.js](https://vuejs.org/) - Base JavaScript framework
 
-[Nuxt.js](https://nuxtjs.org/) - Serverless framework
-
 [TypeScript](https://www.typescriptlang.org/) - Strictly typed superset of JavaScript
 
 ### Open Source License
