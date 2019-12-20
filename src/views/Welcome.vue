@@ -1,28 +1,26 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="welcome">
+    <h1>The Welcome page</h1>
+
+    <base-button
+      text="Get Start"
+      class="full-width"
+      @click="$router.push({ name: 'city' })"
+    />
   </div>
 </template>
 
 <script lang="ts">
 // @ is an alias to /src
 import { Vue, Component } from "vue-property-decorator"
-import { Action } from "vuex-class"
-import HelloWorld from "@/components/HelloWorld.vue"
 import moment from "moment"
+import BaseButton from "@/components/BaseButton.vue"
 import { City, ApiCity } from "@/types/city"
 
 @Component({
   components: {
-    HelloWorld
+    BaseButton
   }
 })
-export default class Home extends Vue {
-  @Action("updateDate") updateDate!: Function
-
-  created(): void {
-    this.updateDate({ type: "start", date: moment() })
-  }
-}
+export default class Welcome extends Vue {}
 </script>
