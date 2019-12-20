@@ -1,5 +1,8 @@
 @import "variables";
 
+// Import the Roboto font face
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
 // Global styles
 .text-faded {
   color: $faded;
