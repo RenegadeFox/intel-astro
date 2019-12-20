@@ -1,0 +1,15 @@
+// Colors
+$primary: rgb(19, 90, 229);
+$secondary: rgb(184, 193, 106);
+$light-grey: rgb(204, 204, 204);
+$dark-grey: rgb(153, 153, 153);
+
+$primary-translucent: rgba(19, 90, 229, 0.75);
+$secondary-translucent: rgb(184, 193, 106, 0.75);
+
+$faded: rgba(0, 0, 0, 0.45);
+$faded-2: rgba(0, 0, 0, 0.3);
+
+$translucent-white: rgba(255, 255, 255, 0.1);
+
+$main-gradient: linear-gradient(128.6deg, $secondary 0%, $primary 100%);
