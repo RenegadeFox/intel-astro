@@ -474,7 +474,9 @@ export default class Calendar extends Vue {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import "@/assets/styles/globals.scss";
+
 .calendar-container {
   width: 100%;
   display: grid;
@@ -490,9 +492,7 @@ export default class Calendar extends Vue {
 .header {
   grid-area: header;
   justify-self: stretch;
-  color: #fff;
-  border: 1px solid #aaa;
-  background: #ff7a58;
+  color: #000;
   cursor: pointer;
   box-sizing: border-box;
   display: grid;
@@ -501,6 +501,7 @@ export default class Calendar extends Vue {
 }
 
 .arrow {
+  color: #000;
   cursor: pointer;
   padding: 0 0.4em 0.2em 0.4em;
   font-size: 1.8em;
@@ -527,9 +528,8 @@ export default class Calendar extends Vue {
   align-self: stretch;
   text-align: center;
   padding: 0.4em 0;
-  color: #7a7a7a;
-  border: 1px solid #aaa;
-  background: #eaeaea;
+  color: #000;
+  font-weight: bold;
   box-sizing: border-box;
 }
 
@@ -541,9 +541,7 @@ export default class Calendar extends Vue {
 
 .day {
   height: 50px;
-  color: #3a3a3a;
-  background: #fff;
-  border: solid 1px #aaa;
+  color: #000;
   box-sizing: border-box;
   display: flex;
   cursor: pointer;
@@ -552,21 +550,29 @@ export default class Calendar extends Vue {
 .day-label {
   /* Center the text in the parent element (.day) */
   margin: auto;
+  box-sizing: border-box;
 }
 
 .today {
   font-weight: 500;
   color: #fff;
-  background: rgba(255, 122, 88, 0.75);
+
+  .day-label {
+    background: $primary;
+    padding: 10px;
+    border-radius: 20px;
+  }
 }
 
 .selected {
   color: #fff;
-  background: rgba(255, 122, 88, 1);
+  background: primaryColor(0.5);
+  padding-top: 5px;
+  border-bottom: 5px solid secondaryColor(0.75);
 }
 
 .previous-months-day,
 .next-months-day {
-  color: #ccc;
+  color: $faded;
 }
 </style>
