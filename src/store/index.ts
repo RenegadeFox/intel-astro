@@ -23,7 +23,7 @@ export default new Vuex.Store({
     messages: {
       welcome: "Easily get up to date astronomical weather data",
       city: "In what city should I get astro data?",
-      startDate: "On which date should I get astro data?",
+      dates: "On which date should I get astro data?",
       endDate: "Until which date?",
       "astro-data":
         "Showing astro data for\n{city}\n from {startDate} until {endDate}"
