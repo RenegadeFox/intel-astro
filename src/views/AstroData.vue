@@ -63,3 +63,17 @@ export default class AstroData extends Vue {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.astro-data {
+  width: 100%;
+  margin-top: 50px;
+  align-self: start;
+  display: grid;
+
+  .cards {
+    justify-self: center;
+    width: 90%;
+  }
+}
+</style>
