@@ -240,9 +240,9 @@ export default class Autocomplete extends Vue {
 /* List holding all the results */
 .autocomplete-results {
   box-sizing: border-box;
+  overflow-x: hidden;
   padding: 0px;
   margin: 0px;
-  overflow: auto;
   width: 100%;
 }
 </style>
