@@ -1,7 +1,5 @@
 <template>
   <div class="welcome">
-    <h1>The Welcome page</h1>
-
     <base-button
       text="Get Start"
       class="full-width"

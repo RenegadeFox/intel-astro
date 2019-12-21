@@ -48,4 +48,19 @@ export default class Layout extends Vue {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+@import "@/assets/styles/globals";
+
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+  background: $main-gradient;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+a {
+  color: #fff;
+}
+</style>

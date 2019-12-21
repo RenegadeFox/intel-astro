@@ -1,7 +1,5 @@
 <template>
   <div class="city">
-    <h1>The City page</h1>
-
     <autocomplete
       :items="cities"
       :is-async="true"
