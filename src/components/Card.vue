@@ -65,7 +65,7 @@
       </div>
 
       <div class="value">
-        {{ getFormattedTime(moon.rise) }}
+        {{ moonrise }}
       </div>
     </div>
 
@@ -77,7 +77,7 @@
       </div>
 
       <div class="value">
-        {{ getFormattedTime(moon.set) }}
+        {{ moonset }}
       </div>
     </div>
 
@@ -118,6 +118,22 @@ export default class Card extends Vue {
     return `${this.date.toLocaleString("default", {
       month: "short"
     })} ${this.date.getDate()}`
+  }
+
+  get moonrise(): string {
+    if (typeof this.moon.rise === "undefined") {
+      return "Rises next day"
+    } else {
+      return this.getFormattedTime(this.moon.rise)
+    }
+  }
+
+  get moonset(): string {
+    if (typeof this.moon.set === "undefined") {
+      return "N/A"
+    } else {
+      return this.getFormattedTime(this.moon.set)
+    }
   }
 
   getFormattedTime(date: Date): string {
