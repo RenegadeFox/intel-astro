@@ -1,7 +1,7 @@
 <template>
   <div class="welcome">
     <base-button
-      text="Get Start"
+      text="Get Started"
       class="full-width"
       @click="$router.push({ name: 'city' })"
     />
@@ -11,7 +11,6 @@
 <script lang="ts">
 // @ is an alias to /src
 import { Vue, Component } from "vue-property-decorator"
-import moment from "moment"
 import BaseButton from "@/components/BaseButton.vue"
 import { City, ApiCity } from "@/types/city"
 
@@ -22,3 +21,9 @@ import { City, ApiCity } from "@/types/city"
 })
 export default class Welcome extends Vue {}
 </script>
+
+<style lang="scss" scoped>
+.welcome {
+  padding: 50px 20px;
+}
+</style>
