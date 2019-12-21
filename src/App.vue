@@ -5,6 +5,8 @@
     <base-sub-header class="sub-header" />
 
     <router-view class="page-content-container" />
+
+    <base-footer class="footer" />
   </div>
 </template>
 
@@ -13,11 +15,13 @@ import { Vue, Component, Watch } from "vue-property-decorator"
 import { Action, Getter, State } from "vuex-class"
 import BaseHeader from "@/components/BaseHeader.vue"
 import BaseSubHeader from "@/components/BaseSubHeader.vue"
+import BaseFooter from "@/components/BaseFooter.vue"
 
 @Component({
   components: {
     BaseHeader,
-    BaseSubHeader
+    BaseSubHeader,
+    BaseFooter
   }
 })
 export default class Layout extends Vue {
@@ -65,14 +69,19 @@ a {
 }
 
 #app {
+  width: 100vw;
+  height: 100vh;
+  padding: 0px;
+  margin: 0px;
   display: grid;
   grid-template-columns: 10px auto 10px;
-  grid-template-rows: 20px auto auto auto;
+  grid-template-rows: 50px 100px 100px auto auto;
   grid-template-areas:
     ". . ."
     ". header ."
     ". sub-header ."
-    "content content content";
+    "content content content"
+    "footer footer footer";
 }
 
 .header {
@@ -89,5 +98,11 @@ a {
 
 .page-content-container {
   grid-area: content;
+}
+
+.footer {
+  grid-area: footer;
+  align-self: end;
+  margin-bottom: -230px;
 }
 </style>
