@@ -26,7 +26,7 @@ export default new Vuex.Store({
       dates: "On which date should I get astro data?",
       endDate: "Until which date?",
       "astro-data":
-        "Showing astro data for\n{city}\n from {startDate} until {endDate}"
+        "Showing astro data for<br />{city}<br /> from {startDate} until {endDate}"
     } as Messages<string>
   },
   getters: {

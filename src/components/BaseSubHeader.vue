@@ -1,5 +1,5 @@
 <template>
-  <p class="text-faded">{{ getPageMessage }}</p>
+  <p class="text-faded" v-html="getPageMessage"></p>
 </template>
 
 <script lang="ts">
