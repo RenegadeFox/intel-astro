@@ -63,4 +63,31 @@ body {
 a {
   color: #fff;
 }
+
+#app {
+  display: grid;
+  grid-template-columns: 10px auto 10px;
+  grid-template-rows: 20px auto auto auto;
+  grid-template-areas:
+    ". . ."
+    ". header ."
+    ". sub-header ."
+    "content content content";
+}
+
+.header {
+  grid-area: header;
+  text-align: center;
+  align-self: center;
+}
+
+.sub-header {
+  grid-area: sub-header;
+  text-align: center;
+  align-self: center;
+}
+
+.page-content-container {
+  grid-area: content;
+}
 </style>
