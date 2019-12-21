@@ -9,7 +9,8 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "vue-property-decorator"
+import { Vue, Component, Watch } from "vue-property-decorator"
+import { Action } from "vuex-class"
 import BaseHeader from "@/components/BaseHeader.vue"
 import BaseSubHeader from "@/components/BaseSubHeader.vue"
 
@@ -19,7 +20,18 @@ import BaseSubHeader from "@/components/BaseSubHeader.vue"
     BaseSubHeader
   }
 })
-export default class Layout extends Vue {}
+export default class Layout extends Vue {
+  @Action("updatePage") updatePage!: Function
+
+  @Watch("$route")
+  onRouteChange(to: any, from: any): void {
+    this.updatePage(this.$router.currentRoute.name)
+  }
+
+  created(): void {
+    this.updatePage(this.$router.currentRoute.name)
+  }
+}
 </script>
 
 <style lang="scss"></style>
