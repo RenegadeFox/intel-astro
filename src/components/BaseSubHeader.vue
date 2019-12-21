@@ -1,5 +1,27 @@
 <template>
-  <p class="text-faded" v-html="pageMessage"></p>
+  <p class="text-faded" v-html="pageMessage" v-if="page !== 'astro-data'"></p>
+  <p class="text-faded" v-else>
+    Showing astro data in
+    <br />
+    <router-link to="/city"
+      >{{ location.city }}, {{ location.state }}</router-link
+    >
+    <br />
+    from
+    <router-link to="/dates">
+      {{ dateRange[0].toLocaleString("default", { month: "short" }) }}
+      {{ dateRange[0].getDate() }}
+    </router-link>
+    until
+    <router-link to="/dates">
+      {{
+        dateRange[dateRange.length - 1].toLocaleString("default", {
+          month: "short"
+        })
+      }}
+      {{ dateRange[dateRange.length - 1].getDate() }}
+    </router-link>
+  </p>
 </template>
 
 <script lang="ts">
@@ -10,6 +32,7 @@ import { City } from "@/types/city"
 @Component
 export default class BaseSubHeader extends Vue {
   @Getter("getPageMessage") getPageMessage!: string
+  @State page!: string
   @State location!: City
   @State dateRange!: Array<Date>
 
@@ -29,9 +52,18 @@ export default class BaseSubHeader extends Vue {
       )}`
 
       return this.getPageMessage
-        .replace("{city}", `${this.location.city}, ${this.location.state}`)
-        .replace("{startDate}", startDate)
-        .replace("{endDate}", endDate)
+        .replace(
+          "{city}",
+          `<a @click.prevent='$router.push("/city")'>${this.location.city}, ${this.location.state}</a>`
+        )
+        .replace(
+          "{startDate}",
+          `<a @click.prevent='$router.push("/dates")'>${startDate}</a>`
+        )
+        .replace(
+          "{endDate}",
+          `<a @click.prevent='$router.push("/dates")'>${endDate}</a>`
+        )
     } else {
       return this.getPageMessage
     }
