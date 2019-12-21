@@ -1,11 +1,19 @@
 // Colors
-$primary: rgb(19, 90, 229);
-$secondary: rgb(184, 193, 106);
+@function primaryColor($opacity) {
+  @return rgba(19, 90, 229, $opacity);
+}
+
+@function secondaryColor($opacity) {
+  @return rgba(184, 193, 106, $opacity);
+}
+
+$primary: primaryColor(1);
+$secondary: secondaryColor(1);
 $light-grey: rgb(204, 204, 204);
 $dark-grey: rgb(153, 153, 153);
 
-$primary-translucent: rgba(19, 90, 229, 0.75);
-$secondary-translucent: rgba(184, 193, 106, 0.75);
+$primary-translucent: primaryColor(0.75);
+$secondary-translucent: secondaryColor(0.75);
 
 $faded: rgba(0, 0, 0, 0.45);
 $faded-2: rgba(0, 0, 0, 0.3);
