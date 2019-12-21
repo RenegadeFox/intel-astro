@@ -25,7 +25,7 @@ export default new Vuex.Store({
       city: "In what city should I get astro data?",
       startDate: "On which date should I get astro data?",
       endDate: "Until which date?",
-      astroData:
+      "astro-data":
         "Showing astro data for\n{city}\n from {startDate} until {endDate}"
     } as Messages<string>
   },
