@@ -12,12 +12,13 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     location: {
+      isSet: false,
       fullName: "",
       city: "",
       state: "",
       lat: 0,
       long: 0
-    } as City,
+    },
     dateRange: [] as Array<Date>,
     page: "welcome" as string,
     messages: {
@@ -32,6 +33,9 @@ export default new Vuex.Store({
   getters: {
     getPageMessage(state: any): string {
       return state.messages[state.page]
+    },
+    hasSelectedCity(state: any): boolean {
+      return state.location.isSet
     }
   },
   mutations: {
@@ -42,7 +46,7 @@ export default new Vuex.Store({
      * @param {City} newLocation Location to update the store with
      */
     UPDATE_LOCATION(state: any, newLocation: City): void {
-      state.location = newLocation
+      state.location = { isSet: true, ...newLocation }
     },
     /**
      *Updates the Vuex state's start date property

@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { Vue, Component, Watch } from "vue-property-decorator"
-import { Action } from "vuex-class"
+import { Action, Getter, State } from "vuex-class"
 import BaseHeader from "@/components/BaseHeader.vue"
 import BaseSubHeader from "@/components/BaseSubHeader.vue"
 
@@ -22,13 +22,27 @@ import BaseSubHeader from "@/components/BaseSubHeader.vue"
 })
 export default class Layout extends Vue {
   @Action("updatePage") updatePage!: Function
+  @Getter("hasSelectedCity") hasSelectedCity!: boolean
 
   @Watch("$route")
   onRouteChange(to: any, from: any): void {
-    this.updatePage(this.$router.currentRoute.name)
+    this.updatePageName()
   }
 
   created(): void {
+    // Check if user is passed the welcome page and has not selected a date yet
+    if (
+      !this.hasSelectedCity &&
+      (this.$router.currentRoute.name === "dates" ||
+        this.$router.currentRoute.name === "astro-data")
+    ) {
+      this.$router.push({ name: "welcome" })
+    }
+
+    this.updatePageName()
+  }
+
+  updatePageName(): void {
     this.updatePage(this.$router.currentRoute.name)
   }
 }
