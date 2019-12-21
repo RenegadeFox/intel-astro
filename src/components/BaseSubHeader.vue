@@ -1,12 +1,15 @@
 <template>
-  <p class="text-faded">Easily get up to date astronomical weather data</p>
+  <p class="text-faded">{{ getPageMessage }}</p>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator"
+import { Getter } from "vuex-class"
 
 @Component
-export default class BaseSubHeader extends Vue {}
+export default class BaseSubHeader extends Vue {
+  @Getter("getPageMessage") getPageMessage!: string
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
