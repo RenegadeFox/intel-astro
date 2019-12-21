@@ -14,23 +14,27 @@ export default class BaseSubHeader extends Vue {
   @State dateRange!: Array<Date>
 
   get pageMessage(): string {
-    const startDate = `${this.dateRange[0].getDate()} ${this.dateRange[0].toLocaleString(
-      "default",
-      { month: "short" }
-    )}`
-    const endDate = `${this.dateRange[
-      this.dateRange.length - 1
-    ].getDate()} ${this.dateRange[this.dateRange.length - 1].toLocaleString(
-      "default",
-      {
-        month: "short"
-      }
-    )}`
+    if (this.dateRange.length > 1) {
+      const startDate = `${this.dateRange[0].getDate()} ${this.dateRange[0].toLocaleString(
+        "default",
+        { month: "short" }
+      )}`
+      const endDate = `${this.dateRange[
+        this.dateRange.length - 1
+      ].getDate()} ${this.dateRange[this.dateRange.length - 1].toLocaleString(
+        "default",
+        {
+          month: "short"
+        }
+      )}`
 
-    return this.getPageMessage
-      .replace("{city}", `${this.location.city}, ${this.location.state}`)
-      .replace("{startDate}", startDate)
-      .replace("{endDate}", endDate)
+      return this.getPageMessage
+        .replace("{city}", `${this.location.city}, ${this.location.state}`)
+        .replace("{startDate}", startDate)
+        .replace("{endDate}", endDate)
+    } else {
+      return this.getPageMessage
+    }
   }
 }
 </script>

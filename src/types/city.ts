@@ -14,6 +14,7 @@ export interface ApiCity {
 
 // Local version of the ApiCity type
 export interface City {
+  isSet: boolean
   fullName: string
   city: string
   state: string

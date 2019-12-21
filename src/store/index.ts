@@ -18,7 +18,7 @@ export default new Vuex.Store({
       state: "",
       lat: 0,
       long: 0
-    },
+    } as City,
     dateRange: [] as Array<Date>,
     page: "welcome" as string,
     messages: {
@@ -46,7 +46,7 @@ export default new Vuex.Store({
      * @param {City} newLocation Location to update the store with
      */
     UPDATE_LOCATION(state: any, newLocation: City): void {
-      state.location = { isSet: true, ...newLocation }
+      state.location = newLocation
     },
     /**
      *Updates the Vuex state's start date property
@@ -76,6 +76,7 @@ export default new Vuex.Store({
      */
     updateLocation({ commit }: any, newLocation: ApiCity): void {
       const formattedLocation: City = {
+        isSet: true,
         fullName: newLocation.name,
         city: newLocation.name.split(", ")[0],
         state: getState(newLocation),
