@@ -1,6 +1,12 @@
 # Intel Astro
 
+![GitHub issues by-label](https://img.shields.io/github/issues/rootr/intel-astro/bug)
+![GitHub issues by-label](https://img.shields.io/github/issues/rootr/intel-astro/enhancement)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/rootr/intel-astro)
+
 > A simplistic Progressive Web App (PWA) to get up to date astronomical weather data.
+
+Live Web App: https://astro.intelapps.app
 
 I created this PWA because I have to work with astronomical weather data pretty frequently, and I got tired of using out of date web sites and jumping through hoops just to get astronomical weather data for specific dates.
 
@@ -38,6 +44,8 @@ Intel Astro was created with help from these resources
 [Vue.js](https://vuejs.org/) - Base JavaScript framework
 
 [TypeScript](https://www.typescriptlang.org/) - Strictly typed superset of JavaScript
+
+[Google Firebase](https://firebase.google.com/) - Hosting service
 
 ### Open Source License
 
