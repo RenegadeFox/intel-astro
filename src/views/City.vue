@@ -92,6 +92,7 @@ export default class City extends Vue {
       // Update the local cities Array, but limit it based on the set max limit
       this.cities = response.data.Results.slice(0, this.maxResults)
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error(
         `[Error] There was an error fetching the cities from the API\n
         ${error}`
