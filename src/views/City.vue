@@ -3,6 +3,7 @@
     <autocomplete
       :items="cities"
       :is-async="true"
+      :autofocus="true"
       results-class="results-container"
       classes="text-field full-width"
       placeholder="Search worldwide cities..."

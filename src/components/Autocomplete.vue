@@ -2,6 +2,7 @@
   <div class="autocomplete-wrapper">
     <input
       type="text"
+      id="text-field"
       :value="textFieldValue"
       v-bind="$attrs"
       v-on="listeners"
@@ -47,6 +48,8 @@ export default class Autocomplete extends Vue {
   @Prop() resultsClass!: String
   // Classes to add to the input field
   @Prop({ default: "text-field" }) classes!: string
+  // Whether or not the search field should autofocus
+  @Prop({ default: true }) autofocus!: boolean
   // Triggers when an item is clicked/selected
   @Prop() onSelect!: Function
   // Method to run when user types and parent uses async method
@@ -119,6 +122,18 @@ export default class Autocomplete extends Vue {
 
   mounted(): void {
     document.addEventListener("click", this.handleClickOutside)
+
+    // Check if autofocus property is enabled
+    if (this.autofocus) {
+      const textField: HTMLElement | null = document.getElementById(
+        "text-field"
+      )
+
+      // Make sure textField is not null
+      if (textField) {
+        textField.focus()
+      }
+    }
   }
 
   destroyed(): void {
