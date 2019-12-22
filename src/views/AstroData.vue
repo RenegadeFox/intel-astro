@@ -65,6 +65,26 @@ export default class AstroData extends Vue {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/styles/breakpoints";
+
+@include breakpoint(tablet) {
+  .cards {
+    width: 350px !important;
+  }
+}
+
+@include breakpoint(laptop) {
+  .cards {
+    width: 350px !important;
+  }
+}
+
+@include breakpoint(desktop) {
+  .cards {
+    width: 350px !important;
+  }
+}
+
 .astro-data {
   width: 100%;
   margin-top: 50px;

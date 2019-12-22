@@ -102,8 +102,42 @@ export default class City extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
-@import "@/assets/styles/globals.scss";
+<style lang="scss">
+@import "@/assets/styles/globals";
+@import "@/assets/styles/breakpoints";
+
+@include breakpoint(tablet) {
+  .text-field {
+    border-radius: 20px;
+  }
+
+  .results-container {
+    border-radius: 10px;
+    top: 50px;
+  }
+}
+
+@include breakpoint(laptop) {
+  .text-field {
+    border-radius: 20px;
+  }
+
+  .results-container {
+    border-radius: 10px;
+    top: 50px;
+  }
+}
+
+@include breakpoint(desktop) {
+  .text-field {
+    border-radius: 20px;
+  }
+
+  .results-container {
+    border-radius: 10px;
+    top: 50px;
+  }
+}
 
 .results-container {
   position: absolute;

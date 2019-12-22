@@ -54,6 +54,7 @@ export default class Layout extends Vue {
 
 <style lang="scss">
 @import "@/assets/styles/globals";
+@import "@/assets/styles/breakpoints";
 
 html,
 body {
@@ -74,14 +75,48 @@ a {
   padding: 0px;
   margin: 0px;
   display: grid;
-  grid-template-columns: 10px auto 10px;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
   grid-template-rows: 50px 100px 100px auto auto;
   grid-template-areas:
     ". . ."
-    ". header ."
-    ". sub-header ."
+    "header header header"
+    "sub-header sub-header sub-header"
     "content content content"
     "footer footer footer";
+}
+
+@include breakpoint(tablet) {
+  #app {
+    grid-template-areas:
+      ". . ."
+      "header header header"
+      "sub-header sub-header sub-header"
+      ". content ."
+      "footer footer footer";
+  }
+}
+
+@include breakpoint(laptop) {
+  #app {
+    grid-template-areas:
+      ". . ."
+      "header header header"
+      "sub-header sub-header sub-header"
+      ". content ."
+      "footer footer footer";
+  }
+}
+
+@include breakpoint(desktop) {
+  #app {
+    grid-template-areas:
+      ". . ."
+      "header header header"
+      "sub-header sub-header sub-header"
+      ". content ."
+      "footer footer footer";
+  }
 }
 
 .header {

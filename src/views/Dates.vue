@@ -1,6 +1,6 @@
 <template>
   <div id="dates">
-    <calendar @dateSelected="userSelectedDate" />
+    <calendar class="calendar-container" @dateSelected="userSelectedDate" />
   </div>
 </template>
 
@@ -35,4 +35,37 @@ export default class App extends Vue {
 }
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+@import "@/assets/styles/breakpoints";
+
+#dates {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+}
+
+@include breakpoint(tablet) {
+  .calendar-container {
+    width: 400px;
+    height: 400px;
+    justify-self: center;
+  }
+}
+
+@include breakpoint(laptop) {
+  .calendar-container {
+    width: 400px;
+    height: 400px;
+    justify-self: center;
+  }
+}
+
+@include breakpoint(desktop) {
+  .calendar-container {
+    width: 400px;
+    height: 400px;
+    justify-self: center;
+  }
+}
+</style>
