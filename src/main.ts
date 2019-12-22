@@ -1,6 +1,6 @@
 import Vue from "vue"
 import App from "./App.vue"
-import firebase from "firebase"
+import { initializeApp } from "firebase"
 import "./registerServiceWorker"
 import router from "./router"
 import store from "./store"
@@ -18,7 +18,7 @@ const firebaseConfig = {
   measurementId: "G-MZGMJQJ4DD"
 }
 
-firebase.initializeApp(firebaseConfig)
+initializeApp(firebaseConfig)
 
 new Vue({
   router,
