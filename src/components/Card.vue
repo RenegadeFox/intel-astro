@@ -130,7 +130,7 @@ export default class Card extends Vue {
 
   get moonset(): string {
     if (typeof this.moon.set === "undefined") {
-      return "N/A"
+      return "Sets next day"
     } else {
       return this.getFormattedTime(this.moon.set)
     }
