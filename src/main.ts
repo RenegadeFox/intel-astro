@@ -6,6 +6,8 @@ import store from "./store"
 
 Vue.config.productionTip = false
 
+import "./firebaseConfig"
+
 new Vue({
   router,
   store,
