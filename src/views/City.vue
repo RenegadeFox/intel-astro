@@ -108,7 +108,6 @@ export default class CityPage extends Vue {
         this.$router.push({ name: "dates" })
       } else {
         this.canGeoLocate = false
-        console.error("Could not get location!")
       }
     } catch (error) {
       // eslint-disable-next-line no-console
