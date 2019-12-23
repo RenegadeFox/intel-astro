@@ -1,6 +1,5 @@
 import Vue from "vue"
 import Vuex from "vuex"
-import getState from "@/assets/helpers"
 import { City, ApiCity } from "@/types/City"
 
 interface Messages<TValue> {
@@ -74,17 +73,8 @@ export default new Vuex.Store({
      * @param {*} { commit }
      * @param {ApiCity} newLocation Location Object to update the store with
      */
-    updateLocation({ commit }: any, newLocation: ApiCity): void {
-      const formattedLocation: City = {
-        isSet: true,
-        fullName: newLocation.name,
-        city: newLocation.name.split(", ")[0],
-        state: getState(newLocation),
-        lat: parseFloat(newLocation.lat),
-        long: parseFloat(newLocation.lon)
-      }
-
-      commit("UPDATE_LOCATION", formattedLocation)
+    updateLocation({ commit }: any, newLocation: City): void {
+      commit("UPDATE_LOCATION", newLocation)
     },
     /**
      *Runs the mutation to update the Vuex state's dateRange Array

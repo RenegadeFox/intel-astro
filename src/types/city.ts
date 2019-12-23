@@ -21,3 +21,13 @@ export interface City {
   lat: number
   long: number
 }
+
+// Geolocation interface
+export interface GeoLoc {
+  ip: string
+  city: string
+  region: string
+  country: string
+  loc: string
+  postal: string
+}

@@ -66,7 +66,7 @@ const states: States<string> = {
   Wyoming: "WY"
 }
 
-export default function(cityObj: ApiCity): string {
+export const getStateFromObj = (cityObj: ApiCity) => {
   // Holds the state/country
   const stateOrCountry = cityObj.name.split(", ")[1]
 
@@ -78,4 +78,8 @@ export default function(cityObj: ApiCity): string {
 
   // Otherwise, just return the country
   return stateOrCountry
+}
+
+export const getStateFromString = (state: string) => {
+  return states[state]
 }
