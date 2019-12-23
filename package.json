@@ -1,6 +1,7 @@
 {
   "name": "intel-astro",
   "version": "1.1.0",
+  "description": "A simplistic web app to get up to date astronomical weather data.",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
