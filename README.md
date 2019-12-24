@@ -1,4 +1,5 @@
-# Intel Astro
+<h1 align="center">Intel Astro</h1>
+
 
 ![GitHub issues by-label](https://img.shields.io/github/issues/rootr/intel-astro/bug)
 ![GitHub issues by-label](https://img.shields.io/github/issues/rootr/intel-astro/enhancement)
