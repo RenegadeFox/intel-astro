@@ -3,9 +3,7 @@
   <p class="text-faded" v-else>
     Showing astro data in
     <br />
-    <router-link to="/city"
-      >{{ location.city }}, {{ location.state }}</router-link
-    >
+    <router-link to="/city">{{ formattedName }}</router-link>
     <br />
     from
     <router-link to="/dates">
@@ -28,6 +26,7 @@
 import { Component, Vue } from "vue-property-decorator"
 import { Getter, State } from "vuex-class"
 import { City } from "@/types/city"
+import { getStateFromString } from "@/assets/helpers"
 
 @Component
 export default class BaseSubHeader extends Vue {
@@ -67,6 +66,16 @@ export default class BaseSubHeader extends Vue {
     } else {
       return this.getPageMessage
     }
+  }
+
+  /**
+   *Get the city + U.S. state abbreviation/country
+   *
+   * @param {ApiCity} item City to be formatted
+   * @returns {string} Formatted city/state name
+   */
+  get formattedName(): string {
+    return `${this.location.city}, ${getStateFromString(this.location.state)}`
   }
 }
 </script>
