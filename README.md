@@ -1,9 +1,16 @@
 <h1 align="center">Intel Astro</h1>
 
-
-![GitHub issues by-label](https://img.shields.io/github/issues/rootr/intel-astro/bug)
-![GitHub issues by-label](https://img.shields.io/github/issues/rootr/intel-astro/enhancement)
-![GitHub package.json version](https://img.shields.io/github/package-json/v/rootr/intel-astro)
+<p align="center">
+   <a href="https://img.shields.io/github/issues/rootr/intel-astro/bug">
+      <img src="https://img.shields.io/github/issues/rootr/intel-astro/bug" alt="GitHub issues by-label" />
+   </a>
+   <a href="https://img.shields.io/github/issues/rootr/intel-astro/enhancement">
+      <img src="https://img.shields.io/github/issues/rootr/intel-astro/enhancement" alt="GitHub issues by-label" />
+   </a>
+   <a href="https://img.shields.io/github/package-json/v/rootr/intel-astro">
+      <img src="https://img.shields.io/github/package-json/v/rootr/intel-astro" alt="GitHub package.json version" />
+   </a>
+</p>
 
 > A simplistic Progressive Web App (PWA) to get up to date astronomical weather data.
 
