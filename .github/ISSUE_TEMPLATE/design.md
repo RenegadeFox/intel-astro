@@ -7,8 +7,6 @@ assignees: rootr
 
 ---
 
-Change/Create Design for Some Page
-===
 > Enter a short description
 
 **Tasks:**

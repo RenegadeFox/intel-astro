@@ -7,8 +7,6 @@ assignees: rootr
 
 ---
 
-Create [Page/Component/Logic]
-===
 > Enter a short description
 
 **Tasks:**
